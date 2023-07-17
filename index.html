@@ -3,29 +3,57 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    #sheet-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      z-index: 9999;
-      display: none;
+#sheet-iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sheet-container-wrapper {
+  position: relative;
+  padding-bottom: 75%; /* Aspect ratio for responsive iframe (4:3) */
+  height: 0;
+  overflow: hidden;
+}
+
+.sheet-container-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+    button {
+        position: absolute;
+        padding: 15px;
+        top: 150px;
+        border: none;
+        background-color: mediumblue;
+        color: #fff;
+        font-weight: 600;
+
+
     }
-  
-    #sheet-iframe {
-      width: 100%;
-      height: 100%;
+
+    button:hover {
+        background-color: #fff;
+        color: mediumblue;
     }
+
   </style>
-  <script src="script.js"></script>
 </head>
 <body>
-  <button onclick="openGoogleSheet()">Ouvrir le Google Sheet</button>
   
   <div id="sheet-container">
-    <iframe id="sheet-iframe" src=""></iframe>
+    <div class="sheet-container-wrapper">
+      <iframe id="sheet-iframe" src="https://docs.google.com/spreadsheets/d/1cTsiT62wHuVR5JQiPhiWyGgGs_aDHQRY9YX2yheAnDE/edit"></iframe>
+    </div>
+  </div>
+  
   </div>
 </body>
 </html>

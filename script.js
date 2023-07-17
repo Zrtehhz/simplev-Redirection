@@ -3,4 +3,7 @@ function openGoogleSheet() {
   var sheetIframe = document.getElementById("sheet-iframe");
   sheetIframe.src = googleSheetUrl;
   document.getElementById("sheet-container").style.display = "block";
+  document.getElementById("sheet-container").style.width = "460px";
+  document.getElementById("sheet-container").style.height = "800px";
+
 }
